@@ -36,7 +36,7 @@ $(document).ready(function () {
         var tableValue = $('#tableValue').val();
         var names = $('.table_name');
 
-        if(tableValue == 1) {
+        if (tableValue == 1) {
             $.ajax({
                 method: 'post',
                 url: urlsendIdFluyers135,
@@ -46,7 +46,7 @@ $(document).ready(function () {
                 $('#rowId').val(rowId);
                 modalBody.children().remove();
                 var appendDivSize;
-                appendDivSize = ' <div class="fields" style="float:left;margin: 3px;"><div class="ui input focus"><input class="ui input" type="text" name="size" title="formats" value="'+data.productSize[0]+'" required></div></div>';
+                appendDivSize = ' <div class="fields" style="float:left;margin: 3px;"><div class="ui input focus"><input class="ui input" type="text" name="size" title="formats" value="' + data.productSize[0] + '" required></div></div>';
                 modalBody.append(appendDivSize);
                 var nameArray = [];
                 var array = $.map(data.firstTable[0], function (value) {
@@ -66,7 +66,7 @@ $(document).ready(function () {
                 }
             });
         }
-        else if(tableValue == 2) {
+        else if (tableValue == 2) {
             $.ajax({
                 method: 'post',
                 url: urlsendIdFluyers170,
@@ -76,7 +76,7 @@ $(document).ready(function () {
                 $('#rowId').val(rowId);
                 modalBody.children().remove();
                 var appendDivSize;
-                appendDivSize = ' <div class="fields" style="float:left;margin: 3px;"><div class="ui input focus"><input class="ui input" type="text" name="size" title="formats" value="'+data.productSize[0]+'" required></div></div>';
+                appendDivSize = ' <div class="fields" style="float:left;margin: 3px;"><div class="ui input focus"><input class="ui input" type="text" name="size" title="formats" value="' + data.productSize[0] + '" required></div></div>';
                 modalBody.append(appendDivSize);
                 var nameArray = [];
                 var array = $.map(data.firstTable[0], function (value) {
@@ -91,12 +91,12 @@ $(document).ready(function () {
                     else {
                         name = 'count_' + i;
                     }
-                   appendDiv = ' <div class="fields" style="float:left;margin: 3px;"><div class="ui input focus"><input class="ui input" type="text" name="' + name + '" title="formats" value= "' + array[i + 1] + '" required></div></div>';
+                    appendDiv = ' <div class="fields" style="float:left;margin: 3px;"><div class="ui input focus"><input class="ui input" type="text" name="' + name + '" title="formats" value= "' + array[i + 1] + '" required></div></div>';
                     modalBody.append(appendDiv)
                 }
             });
         }
-        else if(tableValue == 3) {
+        else if (tableValue == 3) {
             $.ajax({
                 method: 'post',
                 url: urlsendIdFluyers250,
@@ -106,7 +106,7 @@ $(document).ready(function () {
                 $('#rowId').val(rowId);
                 modalBody.children().remove();
                 var appendDivSize;
-                appendDivSize = ' <div class="fields" style="float:left;margin: 3px;"><div class="ui input focus"><input class="ui input" type="text" name="size" title="formats" value="'+data.productSize[0]+'" required></div></div>';
+                appendDivSize = ' <div class="fields" style="float:left;margin: 3px;"><div class="ui input focus"><input class="ui input" type="text" name="size" title="formats" value="' + data.productSize[0] + '" required></div></div>';
                 modalBody.append(appendDivSize);
 
                 var nameArray = [];
@@ -122,12 +122,12 @@ $(document).ready(function () {
                     else {
                         name = 'count_' + i;
                     }
-                   appendDiv = ' <div class="fields" style="float:left;margin: 3px;"><div class="ui input focus"><input class="ui input" type="text" name="' + name + '" title="formats" value= "' + array[i + 1] + '" required></div></div>';
+                    appendDiv = ' <div class="fields" style="float:left;margin: 3px;"><div class="ui input focus"><input class="ui input" type="text" name="' + name + '" title="formats" value= "' + array[i + 1] + '" required></div></div>';
                     modalBody.append(appendDiv)
                 }
             });
         }
-        else if(tableValue == 4) {
+        else if (tableValue == 4) {
             $.ajax({
                 method: 'post',
                 url: urlsendIdFlyers300Plastic,
@@ -137,7 +137,7 @@ $(document).ready(function () {
                 $('#rowId').val(rowId);
                 modalBody.children().remove();
                 var appendDivSize;
-                appendDivSize = ' <div class="fields" style="float:left;margin: 3px;"><div class="ui input focus"><input class="ui input" type="text" name="size" title="formats" value="'+data.productSize[0]+'" required></div></div>';
+                appendDivSize = ' <div class="fields" style="float:left;margin: 3px;"><div class="ui input focus"><input class="ui input" type="text" name="size" title="formats" value="' + data.productSize[0] + '" required></div></div>';
                 modalBody.append(appendDivSize);
                 var nameArray = [];
                 var array = $.map(data.firstTable[0], function (value) {
@@ -157,7 +157,7 @@ $(document).ready(function () {
                 }
             });
         }
-        else if(tableValue == 5) {
+        else if (tableValue == 5) {
             $.ajax({
                 method: 'post',
                 url: urlsendIdFlyers300,
@@ -167,7 +167,7 @@ $(document).ready(function () {
                 $('#rowId').val(rowId);
                 modalBody.children().remove();
                 var appendDivSize;
-                appendDivSize = ' <div class="fields" style="float:left;margin: 3px;"><div class="ui input focus"><input class="ui input" type="text" name="size" title="formats" value="'+data.productSize[0]+'" required></div></div>';
+                appendDivSize = ' <div class="fields" style="float:left;margin: 3px;"><div class="ui input focus"><input class="ui input" type="text" name="size" title="formats" value="' + data.productSize[0] + '" required></div></div>';
                 modalBody.append(appendDivSize);
                 var nameArray = [];
                 var array = $.map(data.firstTable[0], function (value) {
@@ -187,7 +187,7 @@ $(document).ready(function () {
                 }
             });
         }
- else if(tableValue == 6) {
+        else if (tableValue == 6) {
             $.ajax({
                 method: 'post',
                 url: urlsendIdFlyers300Greenline,
@@ -197,7 +197,7 @@ $(document).ready(function () {
                 $('#rowId').val(rowId);
                 modalBody.children().remove();
                 var appendDivSize;
-                appendDivSize = ' <div class="fields" style="float:left;margin: 3px;"><div class="ui input focus"><input class="ui input" type="text" name="size" title="formats" value="'+data.productSize[0]+'" required></div></div>';
+                appendDivSize = ' <div class="fields" style="float:left;margin: 3px;"><div class="ui input focus"><input class="ui input" type="text" name="size" title="formats" value="' + data.productSize[0] + '" required></div></div>';
                 modalBody.append(appendDivSize);
                 var nameArray = [];
                 var array = $.map(data.firstTable[0], function (value) {
@@ -217,7 +217,7 @@ $(document).ready(function () {
                 }
             });
         }
-        else if(tableValue == 7) {
+        else if (tableValue == 7) {
             $.ajax({
                 method: 'post',
                 url: urlsendIdFlyers350,
@@ -227,7 +227,7 @@ $(document).ready(function () {
                 $('#rowId').val(rowId);
                 modalBody.children().remove();
                 var appendDivSize;
-                appendDivSize = ' <div class="fields" style="float:left;margin: 3px;"><div class="ui input focus"><input class="ui input" type="text" name="size" title="formats" value="'+data.productSize[0]+'" required></div></div>';
+                appendDivSize = ' <div class="fields" style="float:left;margin: 3px;"><div class="ui input focus"><input class="ui input" type="text" name="size" title="formats" value="' + data.productSize[0] + '" required></div></div>';
                 modalBody.append(appendDivSize);
                 var nameArray = [];
                 var array = $.map(data.firstTable[0], function (value) {
@@ -247,7 +247,7 @@ $(document).ready(function () {
                 }
             });
         }
-        else if(tableValue == 8) {
+        else if (tableValue == 8) {
             $.ajax({
                 method: 'post',
                 url: urlsendIdFlyers300Plastic,
@@ -257,7 +257,7 @@ $(document).ready(function () {
                 $('#rowId').val(rowId);
                 modalBody.children().remove();
                 var appendDivSize;
-                appendDivSize = ' <div class="fields" style="float:left;margin: 3px;"><div class="ui input focus"><input class="ui input" type="text" name="size" title="formats" value="'+data.productSize[0]+'" required></div></div>';
+                appendDivSize = ' <div class="fields" style="float:left;margin: 3px;"><div class="ui input focus"><input class="ui input" type="text" name="size" title="formats" value="' + data.productSize[0] + '" required></div></div>';
                 modalBody.append(appendDivSize);
                 var nameArray = [];
                 var array = $.map(data.firstTable[0], function (value) {
@@ -275,10 +275,9 @@ $(document).ready(function () {
                     appendDiv = ' <div class="fields" style="float:left;margin: 3px;"><div class="ui input focus"><input class="ui input" type="text" name="' + name + '" title="formats" value= "' + array[i + 1] + '" required></div></div>';
                     modalBody.append(appendDiv)
                 }
-
             });
         }
-        else if(tableValue == 9) {
+        else if (tableValue == 9) {
             $.ajax({
                 method: 'post',
                 url: urlsendIdFlyers300Greenline,
@@ -288,7 +287,7 @@ $(document).ready(function () {
                 $('#rowId').val(rowId);
                 modalBody.children().remove();
                 var appendDivSize;
-                appendDivSize = ' <div class="fields" style="float:left;margin: 3px;"><div class="ui input focus"><input class="ui input" type="text" name="size" title="formats" value="'+data.productSize[0]+'" required></div></div>';
+                appendDivSize = ' <div class="fields" style="float:left;margin: 3px;"><div class="ui input focus"><input class="ui input" type="text" name="size" title="formats" value="' + data.productSize[0] + '" required></div></div>';
                 modalBody.append(appendDivSize);
                 var nameArray = [];
                 var array = $.map(data.firstTable[0], function (value) {
