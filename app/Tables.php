@@ -58,19 +58,19 @@ class Tables extends Model
     public function shopAffiches135($productId)
     {
 
-        return DB::table('Affiches135')->where('id', $productId)->lists('name');
+        return DB::table('affiches135')->where('id', $productId)->lists('name');
     }
 
     public function Affiches_grand()
     {
 
-        return DB::table('Affiches_grand')->get();
+        return DB::table('affiches_grand')->get();
     }
 
     public function shopAffichesGrand($productId)
     {
 
-        return DB::table('Affiches_grand')->where('id', $productId)->lists('name');
+        return DB::table('affiches_grand')->where('id', $productId)->lists('name');
     }
 
 
@@ -89,12 +89,12 @@ class Tables extends Model
     public function flyers170()
     {
 
-        return DB::table('Flyers170')->get();
+        return DB::table('flyers170')->get();
     }
 
     public function getByIdflyers170($productId)
     {
-        return DB::table('Flyers170')->where('id', $productId)->get();
+        return DB::table('flyers170')->where('id', $productId)->get();
 
     }
 

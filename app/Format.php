@@ -14,7 +14,7 @@ class Format extends Model
 
     public function getFlyersFormat()
     {
-        return DB::table('Flyers_format')->get();
+        return DB::table('flyers_format')->get();
     }
 
     public function getflyyers135Format($productId)
@@ -25,12 +25,12 @@ class Format extends Model
 
     public function addFlyersFormat($format)
     {
-        DB::table('Flyers_format')->insert($format);
+        DB::table('flyers_format')->insert($format);
     }
 
     public function editFlyersFormat($format)
     {
-        DB::table('Flyers_format')->where('name', $format['name'])->update($format);
+        DB::table('flyers_format')->where('name', $format['name'])->update($format);
     }
 
     public function getFlyersFormat170()
