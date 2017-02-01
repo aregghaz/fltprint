@@ -27,15 +27,15 @@
                     <div class="header">Header</div>
                     <div class="content">
                         <form action="{{ route(''.$editRootName .'') }}" method="post">
-                            <div class="modal_body">
+                            <div class="modal_body" style="display: inline-block">
 
                             </div>
                             <div class="actions">
                                 <div class="ui black deny button">
-                                    Nope
+                                   Exite
                                 </div>
-                                <button class="ui positive right labeled icon button" type="submit">
-                                    save
+                                <button class="ui positive right labeled icon button" type="submit" style="padding-right: 1.5em!important;">
+                                    Save
                                 </button>
                                 <input type="hidden" id="rowId" name="row_id_edite" value="">
                                 <input type="hidden" name="_token" value="{{  Session::token() }}">
