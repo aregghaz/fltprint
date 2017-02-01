@@ -17,14 +17,16 @@
                 </div>
 
                 <form action="{{ route(''.$rootName .'') }}" class="ui form" method="post" id="forms">
+                    <div id="formBody" style="display: inline-block">
+
+                    </div>
                     <input type="hidden" name="_token" value="{{  Session::token() }}">
-                    <button class="ui primary button" type="submit" style="display: table;margin-left: 10px;">Save
-                    </button>
+                    <button class="ui primary button" type="submit" style="display: table;margin-left: 10px;">Save</button>
                 </form>
                 <div class="ui modal">
                     <div class="header">Header</div>
                     <div class="content">
-                        <form action="{{ route(''.$editRootName .'') }}" method="post" >
+                        <form action="{{ route(''.$editRootName .'') }}" method="post">
                             <div class="modal_body">
 
                             </div>
@@ -60,16 +62,16 @@
         </div>
     </div>
     <script>
-    var urlsendIdFluyers135 = '{{ route('urlsendIdFluyers135') }}';
-    var urlsendIdFluyers170 = '{{ route('urlsendIdFluyers170') }}';
-    var urlsendIdFluyers250 = '{{ route('urlsendIdFluyers250') }}';
-    var urlsendIdFlyers300Plastic = '{{ route('urlsendIdFlyers300Plastic') }}';
-    var urlsendIdFlyers300 = '{{ route('urlsendIdFlyers300') }}';
-    var urlsendIdFlyers300Greenline = '{{ route('urlsendIdFlyers300Greenline') }}';
-    var urlsendIdFlyers350 = '{{ route('urlsendIdFlyers350') }}';
-    var urlsendIdFlyers300Brilante = '{{ route('urlsendIdFlyers300Brilante') }}';
-    var urlsendIdFlyers300Plastic = '{{ route('urlsendIdFlyers300Plastic') }}';
-    var token = '{{  Session::token() }}';
+        var urlsendIdFluyers135 = '{{ route('urlsendIdFluyers135') }}';
+        var urlsendIdFluyers170 = '{{ route('urlsendIdFluyers170') }}';
+        var urlsendIdFluyers250 = '{{ route('urlsendIdFluyers250') }}';
+        var urlsendIdFlyers300Plastic = '{{ route('urlsendIdFlyers300Plastic') }}';
+        var urlsendIdFlyers300 = '{{ route('urlsendIdFlyers300') }}';
+        var urlsendIdFlyers300Greenline = '{{ route('urlsendIdFlyers300Greenline') }}';
+        var urlsendIdFlyers350 = '{{ route('urlsendIdFlyers350') }}';
+        var urlsendIdFlyers300Brilante = '{{ route('urlsendIdFlyers300Brilante') }}';
+        var urlsendIdFlyers300Plastic = '{{ route('urlsendIdFlyers300Plastic') }}';
+        var token = '{{  Session::token() }}';
     </script>
 
 @endsection

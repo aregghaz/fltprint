@@ -297,5 +297,5 @@ $('.count1').on('click', function () {
     var countProduct = parseFloat(event.target.parentNode.childNodes[1].innerText);
     var productId = event.target.childNodes[1].value;
     var priceProduct = event.target.innerText;
-    window.location.href = '/' + rootName + '?countProduct=' + countProduct + '&productId=' + productId + '&selectValue=' + selectValue + '&priceProduct=' + priceProduct;
+    window.location.href = '/flyprint/public/' + rootName + '?countProduct=' + countProduct + '&productId=' + productId + '&selectValue=' + selectValue + '&priceProduct=' + priceProduct;
 });

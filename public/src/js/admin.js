@@ -1,12 +1,13 @@
 $('.catalog').on('click', function (event) {
-
     var menu = event.target.parentNode.childNodes[3];
-    var menuDisplay = event.target.parentNode.childNodes[3].style.display;
-    if (menuDisplay == "none") {
-        menu.setAttribute("style", "display: block")
-    }
-    else {
-        menu.setAttribute("style", "display: none")
+    if (menu) {
+        var menuDisplay = event.target.parentNode.childNodes[3].style.display;
+        if (menuDisplay == "none") {
+            menu.setAttribute("style", "display: block")
+        }
+        else {
+            menu.setAttribute("style", "display: none")
+        }
     }
 });
 $(document).ready(function () {
@@ -14,7 +15,7 @@ $(document).ready(function () {
     var nameAaray = [];
     var appendDiv;
     var appendDivSize;
-    var form = $('#forms');
+    var form = $('#formBody');
     appendDivSize = ' <div class="fields" style="float:left;margin: 3px;"><div class="ui input focus"><input class="ui input" type="text" name="size" title="formats" placeholder="XX x XX mm" required></div></div>';
     form.append(appendDivSize);
     for (var i = 0; i < names.length; i++) {
