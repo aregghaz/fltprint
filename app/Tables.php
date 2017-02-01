@@ -52,7 +52,7 @@ class Tables extends Model
     public function Affiches135()
     {
 
-        return DB::table('Affiches135')->get();
+        return DB::table('affiches135')->get();
     }
 
     public function shopAffiches135($productId)

@@ -20,7 +20,7 @@ class Format extends Model
     public function getflyyers135Format($productId)
     {
         $name = DB::table('flyers135')->where('id', $productId)->lists('name');
-        return DB::table('Flyers_format')->where('name', $name)->lists('size');
+        return DB::table('flyers_format')->where('name', $name)->lists('size');
     }
 
     public function addFlyersFormat($format)
@@ -214,11 +214,11 @@ public function getFlyers350PlasticFormats()
 
     public function getAffiches135Format()
     {
-        return DB::table('Affiches135_format')->get();
+        return DB::table('affiches135_format')->get();
     }
  public function getAffiches1Format()
     {
-        return DB::table('Affiches1_format')->get();
+        return DB::table('affiches1_format')->get();
     }
 
     public function affiches_grand_format()
