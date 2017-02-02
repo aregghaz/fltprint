@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Format;
 use App\Tables;
-
+use Illuminate\Http\Request;
 class ShopController extends Controller
 {
     public function shop(){
@@ -13,6 +13,21 @@ class ShopController extends Controller
         $array['select'] = $select;
 
         return view('shop', $array);
+    }
+
+    public function urlSelect(Request $request)
+    {
+        $array = Array();
+        $array['tableName'] = $request['tableName'];
+        $array['formatValue'] = $request['formatValue'];
+        $format = new Format();
+        $productName = $format->SearchTabel($array);
+        $productCount = $format->SearchTabelById($array);
+        $array = Array();
+        $array['productName'] = $productName;
+        $array['productCount'] = $productCount;
+        return response($array);
+
     }
     public function shopFlyers135()
     {

@@ -1,4 +1,6 @@
-<div style="display: none">
+<!-- style="display: none" -->
+
+<div  class="selectic_product_inputs">
     @if(!empty($productPrice))
         @foreach($productPrice as $value)
             @if(!empty($value->count_1))
@@ -69,6 +71,9 @@
             @endif
         @endforeach
     @endif
+    </div>
+
+    <div class="selectic_format_inputs">
     @if(!empty($productCount))
         @foreach($productCount as $value)
             @if(!empty($value->count_1))

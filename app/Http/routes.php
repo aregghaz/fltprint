@@ -20,8 +20,12 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/Flyers.135.gr.satiné', [
         'uses' => 'HomeController@Flyers135',
         'as' => 'Flyers.135.gr.satiné',
-
     ]);
+    Route::post('/Select', [
+        'uses' => 'ShopController@urlSelect',
+        'as' => 'urlSelect',
+    ]);
+
     Route::get('/shopFlyers135', [
         'uses' => 'ShopController@shopFlyers135',
         'as' => 'shopFlyers135',

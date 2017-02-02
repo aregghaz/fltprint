@@ -85,7 +85,10 @@
                             <i class="plus icon"></i>
                         </a>
                         @if( !empty($countProduct))
-                        <input type="text" class="quantity" id="count" readonly="" value="{{ $countProduct }}" title="">
+                            <input type="text" class="quantity" id="count" readonly="" value="{{ $countProduct }}" title="">
+
+                        @else
+                            <input type="text" class="quantity" id="count" readonly="" value="0" title="">
                         @endif
                         <a href="#">
                             <i class="minus icon"></i>
@@ -93,7 +96,10 @@
 
                         <span>
                         @if( !empty($priceProduct))
-                            <input class="quantity" id="price" type="text" value="{{ $priceProduct }}" readonly="" title="">
+                                <input class="quantity" id="price" type="text" value="{{ $priceProduct }}" readonly=""
+                                       title="">
+                            @else
+                                <input class="quantity" id="price" type="text" value="0" readonly="" title="">
                             @endif
                         </span><i class="euro icon"></i>
                     </div>
@@ -318,6 +324,7 @@
         var urlCarteDeluxeFormatSelect = '{{ route('urlCarteDeluxeFormatSelect') }}';
         var urlFlyers350Brilante = '{{ route('urlFlyers350Brilante') }}';
         var urlFlyers350Platic = '{{ route('urlFlyers350Platic') }}';
+        var urlSelect = '{{ route('urlSelect') }}';
 
     </script>
 @endsection

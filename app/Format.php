@@ -280,12 +280,23 @@ public function getFlyers350PlasticFormats()
 
         return DB::table('carte_deluxe_format')->get();
     }
+ public function SearchTabel($array)
+    {
+
+        return DB::table($array['tableName'])->where('name', $array['formatValue'])->get();
+    }
+ public function SearchTabelById($array)
+    {
+
+        return DB::table($array['tableName'])->where('id', 1)->get();
+    }
 
     public function getFlyers()
     {
         return DB::select("SELECT
   products_select_option_name.name,
   products_select_option.value,
+  products_select_option.table_name,
   products_select_option.option_name
 FROM
   products_select_option_name

@@ -1,4 +1,4 @@
-<select class="ui fluid dropdown selectArticle" title="">
+<select class="ui fluid dropdown selectArticle" name="selectArticle" title="">
     <option value="null">Choisissez un article</option>
     @foreach($select as $key )
         @if(!empty($key->name))
@@ -6,9 +6,9 @@
             </optgroup>
         @endif
         @if(!empty($selectValue) and $selectValue == $key->value)
-            <option value="{{ $key->value }}" selected>{{ $key->option_name }}</option>
+            <option class="asd" value="{{ $key->value }}" title="{{ $key->table_name }}" selected>{{ $key->option_name }}</option>
         @else
-            <option value="{{ $key->value }}">{{ $key->option_name }}</option>
+            <option class="asd" value="{{ $key->value }}" title="{{ $key->table_name }}">{{ $key->option_name }}</option>
         @endif
     @endforeach
 </select>
