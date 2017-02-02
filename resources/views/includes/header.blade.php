@@ -6,7 +6,7 @@
             </div>
             <div class="phone">
                 <p class="our-phone"> Appelez-nous: <strong>+32 (0) 19 33 87 87</strong></p>
-                <a href="/" class="button_big"> <strong>Devis / Commander</strong></a>
+                <a href="{{ route('shop') }}" class="button_big"> <strong>Devis / Commander</strong></a>
             </div>
             <div class="login">
                 <a href="/"><strong>Espace client</strong></a>

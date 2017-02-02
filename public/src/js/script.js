@@ -219,7 +219,6 @@ $('.selectArticle').change(function () {
             url: urlCarteVisiteGreenFormatSelect,
             data: {_token: token}
         }).done(function (data) {
-
             for (var i = 0; i < data.length; i++) {
                 selectFormat.append(' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>")
             }
@@ -297,5 +296,59 @@ $('.count1').on('click', function () {
     var countProduct = parseFloat(event.target.parentNode.childNodes[1].innerText);
     var productId = event.target.childNodes[1].value;
     var priceProduct = event.target.innerText;
-    window.location.href = '/' + rootName + '?countProduct=' + countProduct + '&productId=' + productId + '&selectValue=' + selectValue + '&priceProduct=' + priceProduct;
+    window.location.href = rootName + '?countProduct=' + countProduct + '&productId=' + productId + '&selectValue=' + selectValue + '&priceProduct=' + priceProduct;
+});
+var selectedPrice =0;
+var productPrices;
+var currentPrices;
+var selectedCount;
+var productCount;
+var currentCount;
+$(document).ready(function () {
+    currentCount = $('#count');
+    productPrices = $('.productPrice');
+    productCount = $('.productCount');
+    currentPrices = $('#price');
+    for (var i = 0; i < productPrices.length; i++) {
+        if (productPrices[i].value == currentPrices.val()) {
+            selectedPrice = i;
+            selectedCount = i;
+        }
+    }
+    $('.plus').on('click', function () {
+        selectedPrice += 1;
+        selectedCount += 1;
+        var newPrice = Number(currentPrices.val());
+        var newCount = Number(currentCount.val());
+        if (selectedPrice >= productPrices.length-1) {
+            newPrice += Number(productPrices[productPrices.length-1].value);
+            newCount += parseInt(productCount[productCount.length-1].value);
+            currentPrices.val(newPrice);
+            currentCount.val(newCount);
+        }
+        else {
+            currentPrices.val(productPrices[selectedPrice].value);
+            currentCount.val(parseInt(productCount[selectedCount].value));
+        }
+    });
+    $('.minus').on('click', function () {
+        selectedPrice -= 1;
+        selectedCount -= 1;
+        console.log(selectedPrice);
+        var newPrice = Number(currentPrices.val());
+        var newCount = Number(currentCount.val());
+        if (selectedPrice >= productPrices.length-1) {
+            newPrice -= Number(productPrices[productPrices.length-1].value);
+            newCount -= parseInt(productCount[productCount.length-1].value);
+            currentPrices.val(newPrice);
+            currentCount.val(newCount);
+        }
+        else if(selectedPrice < productPrices.length-1 && selectedPrice >=0 ) {
+            currentPrices.val(productPrices[selectedPrice].value);
+            currentCount.val(parseInt(productCount[selectedCount].value));
+        }
+        else if(selectedPrice <= 0) {
+            selectedPrice = 1
+        }
+    });
 });

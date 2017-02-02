@@ -5,7 +5,7 @@
             <optgroup label="{{ $key->name }}">
             </optgroup>
         @endif
-        @if($selectValue == $key->value)
+        @if(!empty($selectValue) and $selectValue == $key->value)
             <option value="{{ $key->value }}" selected>{{ $key->option_name }}</option>
         @else
             <option value="{{ $key->value }}">{{ $key->option_name }}</option>
@@ -20,7 +20,7 @@
     <option value="CUSTOM">Format personnalisé</option>
     @if(!empty($tableName))
         @foreach($tableName as $value)
-            @if($product[0] == $value->value)=
+            @if( !empty($product[0]) and $product[0] == $value->value)
                 <option class="selectOption" value="{{ $value->value }}" selected>{{ $value->name }} ({{ $value->size }}
                     )
                 </option>

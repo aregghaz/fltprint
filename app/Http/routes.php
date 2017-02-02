@@ -27,6 +27,11 @@ Route::group(['middleware' => ['web']], function () {
         'as' => 'shopFlyers135',
 
     ]);
+    route::get('/shop', [
+        'uses' => 'ShopController@shop',
+        'as' => 'shop',
+
+    ]);
     Route::get('/shopFlyers170', [
         'uses' => 'ShopController@shopFlyers170',
         'as' => 'shopFlyers170',

@@ -24,6 +24,11 @@ class Tables extends Model
 
         return DB::table('flyers135')->where('id', $productId)->get();
     }
+    public function getByIdflyers135Count()
+    {
+
+        return DB::table('flyers135')->where('id', 1)->get();
+    }
 
     public function getTableFlyers135_formats()
     {
@@ -97,7 +102,11 @@ class Tables extends Model
         return DB::table('flyers170')->where('id', $productId)->get();
 
     }
+    public function  getByIdflyers170Count()
+    {
 
+        return DB::table('flyers170')->where('id', 1)->get();
+    }
     public function flyers250()
     {
 
@@ -109,7 +118,11 @@ class Tables extends Model
         return DB::table('flyers250')->where('id', $productId)->get();
 
     }
+    public function  getByIdflyers250Count()
+    {
 
+        return DB::table('flyers250')->where('id', 1)->get();
+    }
     public function shopflyers250($productId)
     {
         return DB::table('flyers250')->where('id', $productId)->lists('name');
@@ -127,7 +140,11 @@ class Tables extends Model
         return DB::table('flyers300')->where('id', $productId)->get();
 
     }
+    public function  getByIdflyers300Count()
+    {
 
+        return DB::table('flyers300')->where('id', 1)->get();
+    }
     public function shopFlyers300($productId)
     {
 
@@ -145,7 +162,11 @@ class Tables extends Model
         return DB::table('flyers300_greenLine')->where('id', $productId)->get();
 
     }
+    public function  getByIdflyers300GreenLineCount()
+    {
 
+        return DB::table('flyers300_greenLine')->where('id', 1)->get();
+    }
     public function shopFlyers300_greenLine($productId)
     {
         return DB::table('flyers300_greenLine')->where('id', $productId)->lists('name');
@@ -170,6 +191,11 @@ class Tables extends Model
 
     }
 
+    public function  getByIdflyers300PlasticCount()
+    {
+
+        return DB::table('flyers300_plastic')->where('id', 1)->get();
+    }
     public function flyers350()
     {
 
@@ -180,6 +206,11 @@ class Tables extends Model
     {
         return DB::table('flyers350')->where('id', $productId)->get();
 
+    }
+    public function  getByIdflyers350Count()
+    {
+
+        return DB::table('flyers350')->where('id', 1)->get();
     }
 
     public function shopFlyers350($productId)
@@ -199,7 +230,11 @@ class Tables extends Model
         return DB::table('flyers350_brilant')->where('id', $productId)->lists('name');
 
     }
+    public function  getByIdFlyers350BrilantCount()
+    {
 
+        return DB::table('flyers350_brilant')->where('id', 1)->get();
+    }
     public function flyers350_plastic()
     {
 
@@ -211,7 +246,11 @@ class Tables extends Model
         return DB::table('flyers350_plastic')->where('id', $productId)->lists('name');
 
     }
+    public function  getByIdFlyers350PlasticCount()
+    {
 
+        return DB::table('flyers350_plastic')->where('id', 1)->get();
+    }
     public function affiches_green()
     {
 

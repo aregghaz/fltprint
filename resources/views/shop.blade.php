@@ -3,13 +3,11 @@
 
 @endsection
 @section('content')
-<div>
-
-</div>
+    @include('includes.hidden_table')
     @include('includes.header')
     <div class="ui fourteen column centered grid body">
         @include('includes.body-slider')
-        <div class="nine wide column shop_body">
+        <div class="ten wide column shop_body">
             <div class="ui steps">
                 <div class="active step">
 
@@ -86,11 +84,18 @@
                         <a href="#">
                             <i class="plus icon"></i>
                         </a>
-                        <input type="text" class="quantity" readonly="" value="{{ $countProduct }}" title="">
+                        @if( !empty($countProduct))
+                        <input type="text" class="quantity" id="count" readonly="" value="{{ $countProduct }}" title="">
+                        @endif
                         <a href="#">
                             <i class="minus icon"></i>
                         </a>
-                        <span id="priceCount">{{ $priceProduct }}</span><i class="euro icon"></i>
+
+                        <span>
+                        @if( !empty($priceProduct))
+                            <input class="quantity" id="price" type="text" value="{{ $priceProduct }}" readonly="" title="">
+                            @endif
+                        </span><i class="euro icon"></i>
                     </div>
                 </div>
             </form>
@@ -154,22 +159,17 @@
             </div>
             <h1 class="ui dividing header"></h1>
             <div class="ui grid">
-
                 <div class="eight wide column for_textArea_order">
                     <label for="order.remarks" style="display: block">Votre remarque accompagnant cette commande</label>
                     <textarea cols="45" name="order.remarks" rows="4" title="order.remarks"></textarea>
                 </div>
-
                 <div class="eight wide column method_payments">
                     <div class="votre_pays">
                         <label for="Votre.pays.de.livraison">Votre pays de livraison :
                         </label>
                         <select name="Votre.pays.de.livraison" title="">
-
                             <option value="BE">Belgique</option>
-
                             <option value="FR">France</option>
-
                             <option value="LU">Luxembourg</option>
                         </select>
                     </div>
@@ -190,7 +190,6 @@
                             <option value="OGONE">En ligne</option>
                         </select>
                     </div>
-
                 </div>
                 <div class="eight wide column ">
                     <input name="order.logoDiscounted" type="checkbox" title="">
@@ -226,7 +225,6 @@
                     <button class="ui black basic button button_price_list" type="submit">Devis</button>
                 </div>
             </div>
-
             <div class="ui grid body_futter">
                 <div class="sixteen wide column futter_image">
                     <img src="{{ URL::to('src/img/image_debord.gif')}}" style="float: left" alt="">
@@ -246,9 +244,7 @@
                             de texte à l'intérieur de (et non contre) la zone de coupe. Gardez des marges de 3mm tout
                             autour(ex. a6 = 99x142 mm)</p>
                     </div>
-
                 </div>
-
                 <div class="ui list">
                     <div class="item">
                         <img src="{{ URL::to('src/img/ok.png')}}" class="futter_img_ok" align="middle" alt="">
@@ -282,7 +278,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="ui bulleted list">
                     <div class="item  futter_text_img">réalisez vos fichiers en 600 dpi (sauf pour les affiches en
                         300 dpi)
@@ -297,8 +292,6 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
     @include('includes.futter')
