@@ -96,7 +96,7 @@
 
                         <span>
                         @if( !empty($priceProduct))
-                                <input class="quantity" id="price" type="text" value="{{ $priceProduct }}" readonly=""
+                                <input id="price" type="text" value="{{ $priceProduct }}" readonly=""
                                        title="">
                             @else
                                 <input class="quantity" id="price" type="text" value="0" readonly="" title="">

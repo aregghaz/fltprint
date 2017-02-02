@@ -360,8 +360,7 @@ $(document).ready(function () {
         var formatValue = $('.format').val();
         var selectidProduct = $('.selectic_product_inputs');
         var selectidFormat = $('.selectic_format_inputs');
-        console.log(formatValue);
-        console.log(tableName);
+
         $.ajax({
             method: 'post',
             url: urlSelect,
@@ -381,7 +380,7 @@ $(document).ready(function () {
                 selectidFormat.append('<input class="productCount" type="text" value="' + productCount[i]+ '">');
             }
             $('#price').val($('.productPrice')[0].value);
-            $('.quantity').val($('.productCount')[0].value)
+            $('#count').val(parseInt($('.productCount')[0].value))
         });
     });
 
