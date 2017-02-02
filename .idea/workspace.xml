@@ -35,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="16" column="49" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="49" />
+              <caret line="16" column="49" lean-forward="false" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="49" />
               <folding>
                 <marker date="1485940542469" expanded="true" signature="29923:29925" ph="{...}" />
               </folding>
@@ -53,11 +53,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="select.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="select.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/includes/select.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
-              <caret line="22" column="36" lean-forward="true" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+              <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/src/js/script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="310" column="18" lean-forward="true" selection-start-line="310" selection-start-column="18" selection-end-line="310" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -83,23 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hidden_table.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/includes/hidden_table.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="40" lean-forward="false" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="header.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/includes/header.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" column="35" lean-forward="true" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="39" />
+              <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -177,12 +175,12 @@
         <option value="$PROJECT_DIR$/resources/views/includes/hiden_table.blade.php" />
         <option value="$PROJECT_DIR$/app/Tables.php" />
         <option value="$PROJECT_DIR$/resources/views/includes/hidden_table.blade.php" />
-        <option value="$PROJECT_DIR$/public/src/js/script.js" />
         <option value="$PROJECT_DIR$/resources/views/shop.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/includes/header.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ShopController.php" />
         <option value="$PROJECT_DIR$/resources/views/includes/select.blade.php" />
+        <option value="$PROJECT_DIR$/public/src/js/script.js" />
       </list>
     </option>
   </component>
@@ -605,12 +603,12 @@
       <workItem from="1485598057568" duration="9171000" />
       <workItem from="1485674107547" duration="18712000" />
       <workItem from="1485763742944" duration="52598000" />
-      <workItem from="1485935706529" duration="32409000" />
+      <workItem from="1485935706529" duration="33845000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="216063000" />
+    <option name="totallyTimeSpent" value="217499000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
@@ -988,14 +986,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/src/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="347" column="70" lean-forward="false" selection-start-line="347" selection-start-column="12" selection-end-line="347" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/shop.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1041,7 +1031,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/includes/header.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="35" lean-forward="true" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="39" />
+          <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -1057,7 +1047,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="16" column="49" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="49" />
+          <caret line="16" column="49" lean-forward="false" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="49" />
           <folding>
             <marker date="1485940542469" expanded="true" signature="29923:29925" ph="{...}" />
           </folding>
@@ -1091,7 +1081,15 @@
     <entry file="file://$PROJECT_DIR$/resources/views/includes/select.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
-          <caret line="22" column="36" lean-forward="true" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+          <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/src/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="310" column="18" lean-forward="true" selection-start-line="310" selection-start-column="18" selection-end-line="310" selection-end-column="18" />
           <folding />
         </state>
       </provider>

@@ -24,6 +24,14 @@ $('.selectArticle').change(function () {
             for (var i = 0; i < data.length; i++) {
                 selectFormat.append(' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>")
             }
+            $.ajax({
+                method: 'post',
+                url: urlForFormat,
+                data: {_token: token}
+            }).done(function (data) {
+
+
+            });
         });
     }
     else if (selectArticle == 2) {
@@ -289,7 +297,7 @@ $('#LiassésB').on('click', function () {
         price.text((Number(price.text()) - 10).toFixed(2));
     }
 });
-$('.count1').on('click', function () {
+$('.count1').on('click', function (event) {
     event.preventDefault();
     var selectValue = $('#selectValue').val();
     var rootName = $('#rootName').val();
