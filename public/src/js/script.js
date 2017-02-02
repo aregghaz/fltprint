@@ -308,7 +308,8 @@ var currentCount;
 $(document).ready(function () {
 
 
-    $('.plus').on('click', function () {
+    $('.plus').on('click', function (event) {
+        event.preventDefault();
         currentCount = $('#count');
         productPrices = $('.productPrice');
         productCount = $('.productCount');
@@ -335,6 +336,7 @@ $(document).ready(function () {
         }
     });
     $('.minus').on('click', function () {
+        event.preventDefault();
         selectedPrice -= 1;
         selectedCount -= 1;
         console.log(selectedPrice);
@@ -360,7 +362,6 @@ $(document).ready(function () {
         var formatValue = $('.format').val();
         var selectidProduct = $('.selectic_product_inputs');
         var selectidFormat = $('.selectic_format_inputs');
-
         $.ajax({
             method: 'post',
             url: urlSelect,

@@ -85,8 +85,8 @@
                             <i class="plus icon"></i>
                         </a>
                         @if( !empty($countProduct))
-                            <input type="text" class="quantity" id="count" readonly="" value="{{ $countProduct }}" title="">
-
+                            <input type="text" class="quantity" id="count" readonly="" value="{{ $countProduct }}"
+                                   title="">
                         @else
                             <input type="text" class="quantity" id="count" readonly="" value="0" title="">
                         @endif
@@ -96,8 +96,7 @@
 
                         <span>
                         @if( !empty($priceProduct))
-                                <input id="price" type="text" value="{{ $priceProduct }}" readonly=""
-                                       title="">
+                                <input id="price" type="text" value="{{ $priceProduct }}" readonly="" title="">
                             @else
                                 <input class="quantity" id="price" type="text" value="0" readonly="" title="">
                             @endif
