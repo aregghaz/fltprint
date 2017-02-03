@@ -1,6 +1,6 @@
 <!-- style="display: none" -->
 
-<div  class="selected_product_inputs" >
+<div  class="selected_product_inputs" style="display: none">
     @if(!empty($productPrice))
         @foreach($productPrice as $value)
             @if(!empty($value->count_1))
@@ -73,7 +73,7 @@
     @endif
     </div>
 
-    <div class="selected_format_inputs" >
+    <div class="selected_format_inputs" style="display: none">
     @if(!empty($productCount))
         @foreach($productCount as $value)
             @if(!empty($value->count_1))
