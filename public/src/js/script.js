@@ -13,7 +13,8 @@ $('.catalog').on('click', function (event) {
 $('.selectArticle').change(function (event) {
     var selectArticle = event.target.value;
     var selectFormat = event.target.parentNode.childNodes[3];
-   $( event.target.parentNode.childNodes[3].childNodes).remove();
+    var list = event.target.parentNode.childNodes[3].childNodes;
+    $(list).not($(list)[1]).not($(list)[3]).not($(list)[2]).not($(list)[0]).remove();
     if (selectArticle == 1) {
         $.ajax({
             method: 'post',
@@ -305,61 +306,63 @@ var selectedCount;
 var productCount;
 var currentCount;
 $(document).ready(function () {
-
-
     $('.plus').on('click', function (event) {
         event.preventDefault();
-        currentCount = $('#count');
+        currentCount =  event.target.parentNode.parentNode.parentNode.childNodes[5].childNodes[3];
         productPrices = $('.productPrice');
         productCount = $('.productCount');
-        currentPrices = $('#price');
+        currentPrices = event.target.parentNode.parentNode.parentNode.childNodes[5].childNodes[7].childNodes[1];
+        console.log(currentPrices);
         for (var i = 0; i < productPrices.length; i++) {
-            if (productPrices[i].value == currentPrices.val()) {
+            if (productPrices[i].value == currentPrices.value) {
                 selectedPrice = i;
                 selectedCount = i;
             }
         }
         selectedPrice += 1;
         selectedCount += 1;
-        var newPrice = Number(currentPrices.val());
-        var newCount = Number(currentCount.val());
+        var newPrice = Number(currentPrices.value);
+        var newCount = Number(currentCount.value);
         if (selectedPrice >= productPrices.length - 1) {
             newPrice += Number(productPrices[productPrices.length - 1].value);
             newCount += parseInt(productCount[productCount.length - 1].value);
-            currentPrices.val(newPrice);
-            currentCount.val(newCount);
+            $(currentPrices).val(newPrice);
+            $(currentCount).val(newCount);
         }
         else {
-            currentPrices.val(productPrices[selectedPrice].value);
-            currentCount.val(parseInt(productCount[selectedCount].value));
+            $(currentPrices).val(productPrices[selectedPrice].value);
+            $(currentCount).val(parseInt(productCount[selectedCount].value));
         }
     });
     $('.minus').on('click', function (event) {
         event.preventDefault();
         selectedPrice -= 1;
         selectedCount -= 1;
-        console.log(selectedPrice);
-        var newPrice = Number(currentPrices.val());
-        var newCount = Number(currentCount.val());
+
+        var newPrice = Number(currentPrices.value);
+        var newCount = Number(currentCount.value);
         if (selectedPrice >= productPrices.length - 1) {
             newPrice -= Number(productPrices[productPrices.length - 1].value);
             newCount -= parseInt(productCount[productCount.length - 1].value);
-            currentPrices.val(newPrice);
-            currentCount.val(newCount);
+            $(currentPrices).val(newPrice);
+            $(currentCount).val(newCount);
         }
         else if (selectedPrice < productPrices.length - 1 && selectedPrice >= 0) {
-            currentPrices.val(productPrices[selectedPrice].value);
-            currentCount.val(parseInt(productCount[selectedCount].value));
+            $(currentPrices).val(productPrices[selectedPrice].value);
+            $(currentCount).val(parseInt(productCount[selectedCount].value));
         }
         else if (selectedPrice <= 0) {
             selectedPrice = 1
         }
     });
-    $('.format').change(function () {
-        var tableName = $('.selectArticle option:selected').attr("title");
-        var formatValue = $('.format').val();
-        var selectidProduct = $('.selectic_product_inputs');
-        var selectidFormat = $('.selectic_format_inputs');
+    $('.format').change(function (event) {
+        var count = event.target.parentNode.parentNode.parentNode.childNodes[5].childNodes[3];
+        var price =  event.target.parentNode.parentNode.parentNode.childNodes[5].childNodes[7].childNodes[1];
+        console.log(price);
+        var tableName = $('option:selected', event.target.parentNode.childNodes[1]).attr("title");
+        var formatValue = $(event.target).val();
+        var selectedProduct = $('.selected_product_inputs');
+        var selectedFormat = $('.selected_format_inputs');
         $.ajax({
             method: 'post',
             url: urlSelect,
@@ -371,15 +374,14 @@ $(document).ready(function () {
             var productCount = $.map(data.productCount[0], function (value) {
                 return [value];
             });
-
-            selectidProduct.children().remove();
-            selectidFormat.children().remove();
+            selectedProduct.children().remove();
+            selectedFormat.children().remove();
             for (var i = 2; i < productName.length; i++) {
-                selectidProduct.append('<input class="productPrice" type="text" value="' + productName[i] + '">');
-                selectidFormat.append('<input class="productCount" type="text" value="' + productCount[i] + '">');
+                selectedProduct.append('<input class="productPrice" type="text" value="' + productName[i] + '">');
+                selectedFormat.append('<input class="productCount" type="text" value="' + productCount[i] + '">');
             }
-            $('#price').val($('.productPrice')[0].value);
-            $('#count').val(parseInt($('.productCount')[0].value))
+            $(price).val($('.productPrice')[0].value);
+            $(count).val(parseInt($('.productCount')[0].value))
         });
     });
 

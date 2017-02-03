@@ -62,11 +62,11 @@
                     </tr>
                     </thead>
                 </table>
-
                 <div class="column product_select">
-
-                    @include('includes.select')
-                    <div class="quantity_verification">
+                    <div class="select_second">
+                        @include('includes.select')
+                    </div>
+                    <div class="quantity_verification" >
                         <label for="verification">Vérification pro des fichiers</label>
                         <input type="checkbox" name="verification" id="verification"
                                title="Vérification pro des fichiers"><br>
@@ -79,7 +79,86 @@
                         <label for="Liassés250">Liassés par 250</label>
                         <input type="checkbox" id="LiassésB" name="Liassés255" title="Liassés250"><br>
                     </div>
+                    <div class="count_price">
+                        <a href="#">
+                            <i class="plus icon"></i>
+                        </a>
+                        @if( !empty($countProduct))
+                            <input type="text" class="quantity" id="count" readonly="" value="{{ $countProduct }}"
+                                   title="">
+                        @else
+                            <input type="text" class="quantity" id="count" readonly="" value="0" title="">
+                        @endif
+                        <a href="#">
+                            <i class="minus icon"></i>
+                        </a>
 
+                        <span>
+                        @if( !empty($priceProduct))
+                                <input id="price" type="text" value="{{ $priceProduct }}" readonly="" title="">
+                            @else
+                                <input class="quantity" id="price" type="text" value="0" readonly="" title="">
+                            @endif
+                        </span><i class="euro icon"></i>
+                    </div>
+                </div>
+                <div class="second_select">
+                    <div class="select_second">
+                        @include('includes.select')
+                    </div>
+                    <div class="quantity_verification" >
+                        <label for="verification">Vérification pro des fichiers</label>
+                        <input type="checkbox" name="verification" id="verification"
+                               title="Vérification pro des fichiers"><br>
+                        <label for="Pliage">Pliage</label>
+                        <input type="checkbox" name="Pliage" id="pliage" title="Pliage"><br>
+                        <label for="Perforation">Perforation</label>
+                        <input type="checkbox" name="Perforation" id="perforation" title="Perforation"><br>
+                        <label for="Liassés100">Liassés par 100</label>
+                        <input type="checkbox" id='liassésA' name="Liassés100" title="250"><br>
+                        <label for="Liassés250">Liassés par 250</label>
+                        <input type="checkbox" id="LiassésB" name="Liassés255" title="Liassés250"><br>
+                    </div>
+                    <div class="count_price">
+                        <a href="#">
+                            <i class="plus icon"></i>
+                        </a>
+                        @if( !empty($countProduct))
+                            <input type="text" class="quantity" id="count" readonly="" value="{{ $countProduct }}"
+                                   title="">
+                        @else
+                            <input type="text" class="quantity" id="count" readonly="" value="0" title="">
+                        @endif
+                        <a href="#">
+                            <i class="minus icon"></i>
+                        </a>
+
+                        <span>
+                        @if( !empty($priceProduct))
+                                <input id="price" type="text" value="{{ $priceProduct }}" readonly="" title="">
+                            @else
+                                <input class="quantity" id="price" type="text" value="0" readonly="" title="">
+                            @endif
+                        </span><i class="euro icon"></i>
+                    </div>
+                </div>
+                <div class="third_select">
+                    <div class="select_second">
+                        @include('includes.select')
+                    </div>
+                    <div class="quantity_verification" >
+                        <label for="verification">Vérification pro des fichiers</label>
+                        <input type="checkbox" name="verification" id="verification"
+                               title="Vérification pro des fichiers"><br>
+                        <label for="Pliage">Pliage</label>
+                        <input type="checkbox" name="Pliage" id="pliage" title="Pliage"><br>
+                        <label for="Perforation">Perforation</label>
+                        <input type="checkbox" name="Perforation" id="perforation" title="Perforation"><br>
+                        <label for="Liassés100">Liassés par 100</label>
+                        <input type="checkbox" id='liassésA' name="Liassés100" title="250"><br>
+                        <label for="Liassés250">Liassés par 250</label>
+                        <input type="checkbox" id="LiassésB" name="Liassés255" title="Liassés250"><br>
+                    </div>
                     <div class="count_price">
                         <a href="#">
                             <i class="plus icon"></i>
@@ -105,63 +184,8 @@
                 </div>
             </form>
 
-            <div class="second_select ">
-                <div class="select_second">
-                    @include('includes.select')
-                </div>
-                <div class="quantity_verification" style="display: none">
-                    <label for="verification">Vérification pro des fichiers</label>
-                    <input type="checkbox" name="verification" id="verification"
-                           title="Vérification pro des fichiers"><br>
-                    <label for="Pliage">Pliage</label>
-                    <input type="checkbox" name="Pliage" id="pliage" title="Pliage"><br>
-                    <label for="Perforation">Perforation</label>
-                    <input type="checkbox" name="Perforation" id="perforation" title="Perforation"><br>
-                    <label for="Liassés100">Liassés par 100</label>
-                    <input type="checkbox" id='liassésA' name="Liassés100" title="250"><br>
-                    <label for="Liassés250">Liassés par 250</label>
-                    <input type="checkbox" id="LiassésB" name="Liassés255" title="Liassés250"><br>
-                </div>
-                <div class="count_price">
-                    <a href="#">
-                        <i class="plus icon"></i>
-                    </a>
-                    <input type="text" class="quantity" readonly="" value="0" size="6" title="">
-                    <a href="#">
-                        <i class="minus icon"></i>
-                    </a>
-                    <span id="priceCount">0.00</span><i class="euro icon"></i>
-                </div>
-            </div>
 
-            <div class="third_select">
-                <div class="select_second">
-                    @include('includes.select')
-                </div>
-                <div class="quantity_verification" style="display: none">
-                    <label for="verification">Vérification pro des fichiers</label>
-                    <input type="checkbox" name="verification" id="verification"
-                           title="Vérification pro des fichiers"><br>
-                    <label for="Pliage">Pliage</label>
-                    <input type="checkbox" name="Pliage" id="pliage" title="Pliage"><br>
-                    <label for="Perforation">Perforation</label>
-                    <input type="checkbox" name="Perforation" id="perforation" title="Perforation"><br>
-                    <label for="Liassés100">Liassés par 100</label>
-                    <input type="checkbox" id='liassésA' name="Liassés100" title="250"><br>
-                    <label for="Liassés250">Liassés par 250</label>
-                    <input type="checkbox" id="LiassésB" name="Liassés255" title="Liassés250"><br>
-                </div>
-                <div class="count_price">
-                    <a href="#">
-                        <i class="plus icon"></i>
-                    </a>
-                    <input type="text" class="quantity" readonly="" value="0" size="6" title="">
-                    <a href="#">
-                        <i class="minus icon"></i>
-                    </a>
-                    <span id="priceCount">0.00</span><i class="euro icon"></i>
-                </div>
-            </div>
+
             <h1 class="ui dividing header"></h1>
             <div class="ui grid">
                 <div class="eight wide column for_textArea_order">
