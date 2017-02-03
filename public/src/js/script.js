@@ -10,11 +10,10 @@ $('.catalog').on('click', function (event) {
         }
     }
 });
-$('.selectArticle').change(function () {
-    var selectArticle = $('.selectArticle').val();
-    var selectFormat = $('.format');
-    $('.selectOption').remove();
-    console.log(selectArticle);
+$('.selectArticle').change(function (event) {
+    var selectArticle = event.target.value;
+    var selectFormat = event.target.parentNode.childNodes[3];
+   $( event.target.parentNode.childNodes[3].childNodes).remove();
     if (selectArticle == 1) {
         $.ajax({
             method: 'post',
@@ -22,7 +21,7 @@ $('.selectArticle').change(function () {
             data: {_token: token}
         }).done(function (data) {
             for (var i = 0; i < data.length; i++) {
-                selectFormat.append(' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>")
+                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
             }
 
         });
@@ -34,7 +33,7 @@ $('.selectArticle').change(function () {
             data: {_token: token}
         }).done(function (data) {
             for (var i = 0; i < data.length; i++) {
-                selectFormat.append(' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>")
+                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
             }
         });
     }
@@ -45,7 +44,7 @@ $('.selectArticle').change(function () {
             data: {_token: token}
         }).done(function (data) {
             for (var i = 0; i < data.length; i++) {
-                selectFormat.append(' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>")
+                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
             }
         });
     }
@@ -56,7 +55,7 @@ $('.selectArticle').change(function () {
             data: {_token: token}
         }).done(function (data) {
             for (var i = 0; i < data.length; i++) {
-                selectFormat.append(' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>")
+                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
             }
         });
     }
@@ -67,7 +66,7 @@ $('.selectArticle').change(function () {
             data: {_token: token}
         }).done(function (data) {
             for (var i = 0; i < data.length; i++) {
-                selectFormat.append(' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>")
+                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
             }
         });
     }
@@ -78,7 +77,7 @@ $('.selectArticle').change(function () {
             data: {_token: token}
         }).done(function (data) {
             for (var i = 0; i < data.length; i++) {
-                selectFormat.append(' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>")
+                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
             }
         });
     }
@@ -89,7 +88,7 @@ $('.selectArticle').change(function () {
             data: {_token: token}
         }).done(function (data) {
             for (var i = 0; i < data.length; i++) {
-                selectFormat.append(' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>")
+                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
             }
         });
     }
@@ -100,7 +99,7 @@ $('.selectArticle').change(function () {
             data: {_token: token}
         }).done(function (data) {
             for (var i = 0; i < data.length; i++) {
-                selectFormat.append(' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>")
+                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
             }
         });
     }
@@ -111,7 +110,7 @@ $('.selectArticle').change(function () {
             data: {_token: token}
         }).done(function (data) {
             for (var i = 0; i < data.length; i++) {
-                selectFormat.append(' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>")
+                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
             }
         });
     }
@@ -122,7 +121,7 @@ $('.selectArticle').change(function () {
             data: {_token: token}
         }).done(function (data) {
             for (var i = 0; i < data.length; i++) {
-                selectFormat.append(' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>")
+                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
             }
         });
     }
@@ -133,7 +132,7 @@ $('.selectArticle').change(function () {
             data: {_token: token}
         }).done(function (data) {
             for (var i = 0; i < data.length; i++) {
-                selectFormat.append(' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>")
+                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
             }
         });
     }
@@ -144,7 +143,7 @@ $('.selectArticle').change(function () {
             data: {_token: token}
         }).done(function (data) {
             for (var i = 0; i < data.length; i++) {
-                selectFormat.append(' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>")
+                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
             }
         })
     }
@@ -155,7 +154,7 @@ $('.selectArticle').change(function () {
             data: {_token: token}
         }).done(function (data) {
             for (var i = 0; i < data.length; i++) {
-                selectFormat.append(' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>")
+                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
             }
         })
     }
@@ -166,7 +165,7 @@ $('.selectArticle').change(function () {
             data: {_token: token}
         }).done(function (data) {
             for (var i = 0; i < data.length; i++) {
-                selectFormat.append(' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>")
+                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
             }
         })
     }
@@ -177,7 +176,7 @@ $('.selectArticle').change(function () {
             data: {_token: token}
         }).done(function (data) {
             for (var i = 0; i < data.length; i++) {
-                selectFormat.append(' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>")
+                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
             }
         })
     }
@@ -188,7 +187,7 @@ $('.selectArticle').change(function () {
             data: {_token: token}
         }).done(function (data) {
             for (var i = 0; i < data.length; i++) {
-                selectFormat.append(' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>")
+                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
             }
         })
     }
@@ -199,7 +198,7 @@ $('.selectArticle').change(function () {
             data: {_token: token}
         }).done(function (data) {
             for (var i = 0; i < data.length; i++) {
-                selectFormat.append(' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>")
+                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
             }
         })
     }
@@ -210,7 +209,7 @@ $('.selectArticle').change(function () {
             data: {_token: token}
         }).done(function (data) {
             for (var i = 0; i < data.length; i++) {
-                selectFormat.append(' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>")
+                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
             }
         })
     }
@@ -221,7 +220,7 @@ $('.selectArticle').change(function () {
             data: {_token: token}
         }).done(function (data) {
             for (var i = 0; i < data.length; i++) {
-                selectFormat.append(' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>")
+                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
             }
         })
     }
@@ -232,7 +231,7 @@ $('.selectArticle').change(function () {
             data: {_token: token}
         }).done(function (data) {
             for (var i = 0; i < data.length; i++) {
-                selectFormat.append(' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>")
+                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
             }
         })
     }
@@ -243,7 +242,7 @@ $('.selectArticle').change(function () {
             data: {_token: token}
         }).done(function (data) {
             for (var i = 0; i < data.length; i++) {
-                selectFormat.append(' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>")
+                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
             }
         })
     }
@@ -335,7 +334,7 @@ $(document).ready(function () {
             currentCount.val(parseInt(productCount[selectedCount].value));
         }
     });
-    $('.minus').on('click', function () {
+    $('.minus').on('click', function (event) {
         event.preventDefault();
         selectedPrice -= 1;
         selectedCount -= 1;
@@ -356,7 +355,6 @@ $(document).ready(function () {
             selectedPrice = 1
         }
     });
-
     $('.format').change(function () {
         var tableName = $('.selectArticle option:selected').attr("title");
         var formatValue = $('.format').val();
@@ -370,15 +368,15 @@ $(document).ready(function () {
             var productName = $.map(data.productName[0], function (value) {
                 return [value];
             });
-             var productCount = $.map(data.productCount[0], function (value) {
+            var productCount = $.map(data.productCount[0], function (value) {
                 return [value];
             });
 
             selectidProduct.children().remove();
             selectidFormat.children().remove();
             for (var i = 2; i < productName.length; i++) {
-                selectidProduct.append('<input class="productPrice" type="text" value="' + productName[i]+ '">');
-                selectidFormat.append('<input class="productCount" type="text" value="' + productCount[i]+ '">');
+                selectidProduct.append('<input class="productPrice" type="text" value="' + productName[i] + '">');
+                selectidFormat.append('<input class="productCount" type="text" value="' + productCount[i] + '">');
             }
             $('#price').val($('.productPrice')[0].value);
             $('#count').val(parseInt($('.productCount')[0].value))

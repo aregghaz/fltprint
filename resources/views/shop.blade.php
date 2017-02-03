@@ -107,7 +107,7 @@
 
             <div class="second_select ">
                 <div class="select_second">
-                    @include('includes.secondSelect')
+                    @include('includes.select')
                 </div>
                 <div class="quantity_verification" style="display: none">
                     <label for="verification">Vérification pro des fichiers</label>
@@ -136,7 +136,7 @@
 
             <div class="third_select">
                 <div class="select_second">
-                    @include('includes.secondSelect')
+                    @include('includes.select')
                 </div>
                 <div class="quantity_verification" style="display: none">
                     <label for="verification">Vérification pro des fichiers</label>
