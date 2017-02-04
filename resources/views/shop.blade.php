@@ -106,7 +106,7 @@
                     <div class="select_second">
                         @include('includes.select')
                     </div>
-                    <div class="quantity_verification" >
+                    <div class="quantity_verification" style="display: none" >
                         <label for="verification">Vérification pro des fichiers</label>
                         <input type="checkbox" name="verification" id="verification"
                                title="Vérification pro des fichiers"><br>
@@ -146,7 +146,7 @@
                     <div class="select_second">
                         @include('includes.select')
                     </div>
-                    <div class="quantity_verification" >
+                    <div class="quantity_verification" style="display: none" >
                         <label for="verification">Vérification pro des fichiers</label>
                         <input type="checkbox" name="verification" id="verification"
                                title="Vérification pro des fichiers"><br>
