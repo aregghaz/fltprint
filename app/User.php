@@ -1,17 +1,19 @@
 <?php
+
 namespace App;
 
-use Illuminate\Contracts\Auth\Authenticatable;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use DB;
-
-class User extends Model implements Authenticatable
+use Illuminate\Support\Facades\Auth;
+class User extends Authenticatable
 {
-    use \Illuminate\Auth\Authenticatable;
-    protected $table = 'users';
-    public function login($email, $passwprd)
-    {
-        return DB::table('users')->where(['email' => $email, 'password' => $passwprd])->get();
+
+
+    public function login($array) {
+        $insert = Array();
+        $insert['email'] = $array['email'];
+        $insert['password'] = $array['password'];
+
+        return DB::table('users')->where(['email' => $insert['email'],'password'=> $insert['password']])->first();
     }
 }

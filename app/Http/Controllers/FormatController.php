@@ -4,159 +4,168 @@ namespace App\Http\Controllers;
 
 
 use App\Format;
-
+use App\Tables;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use PDF;
 
 class FormatController extends Controller
 {
-    public function FlyersFormat()
+    public function FlyersFormat(Request $request)
     {
+        $formats = $request['selectedOption'] . '_format';
         $format = new Format();
-        $tableName = $format->getFlyersFormat();
-
+        $tableName = $format->getFlyers135Format($formats);
         return response($tableName);
     }
 
-    public function Flyers170Select()
+    public function account()
     {
+        $array = Array();
         $format = new Format();
-        $tableName = $format->getFlyersFormat170();
-
-        return response($tableName);
+        $select = $format->menu();
+        $userId = Auth::user()->id;
+        $table = new Tables();
+        $info = $table->getUserInfo($userId);
+        $array['menu'] = $select;
+        $array['info'] = $info;
+        return view('account', $array);
     }
 
-    public function Flyers250Select()
+    public function changeAccount(Request $request)
     {
-        $format = new Format();
-        $tableName = $format->getFlyers250Format();
+        $userId = Auth::user()->id;
+        $array = Array();
+        $array['name'] = $request['name'];
+        $array['email'] = $request['email'];
+        $array['portable'] = $request['portable'];
+        $array['company'] = $request['company'];
+        $array['companyName'] = $request['companyName'];
+        $array['telephone'] = $request['telephone'];
+        $array['address'] = $request['address'];
+        $array['addressElse'] = $request['addressElse'];
+        $array['postalCode'] = $request['postalCode'];
+        $array['city'] = $request['city'];
+        $array['userId'] = $userId;
 
-        return response($tableName);
+        $format = new Format();
+        $select = $format->menu();
+
+        $table = new Tables();
+        $info = $table->changeUserInfo($array);
+        $array['menu'] = $select;
+        $array['info'] = $info;
+        return view('account', $array);
     }
 
-    public function Flyers300Select()
+    public function htmltopdfview(Request $request)
     {
-        $format = new Format();
-        $tableName = $format->getFlyers300_format();
-
-        return response($tableName);
+        $data = $_GET['data'];
+        $count = explode(',', $data);
+        $totalCount = $_GET['totalCount'];
+        $total = explode(',', $totalCount);
+        $size = $_GET['format'];
+        $format = explode(',', $size);
+        $totalPrice = $_GET['totalPrice'];
+        $price = explode(',', $totalPrice);
+        $nameProduct = $_GET['nameProduct'];
+        $product = explode(',', $nameProduct);
+        $countProduct = $_GET['countProduct'];
+        $productCount = explode(',', $countProduct);
+        $array = Array();
+        $array['count'] = $count;
+        $array['totalPrice'] = $price;
+        $array['totalCount'] = $total;
+        $array['product'] = $product;
+        $array['format'] = $format;
+        $array['productCount'] = $productCount;
+        view()->share('products');
+        if ($request->has('download')) {
+            $pdf = PDF::loadView('page.download', $array);
+            return $pdf->download('devise.pdf');
+        }
+        return redirect()->back();
     }
 
-    public function Flyers300PlasticSelect()
+    public function verification()
     {
         $format = new Format();
-        $tableName = $format-> getFlyers300PlastiFormat();
-        return response($tableName);
+        $select = $format->menu();
+        $array = Array();
+        $array['menu'] = $select;
+        return view('menu.verification', $array);
     }
 
-    public function Flyers350Select()
+    public function compositions()
     {
         $format = new Format();
-        $tableName = $format->getFlyers350Formats();
-        return response($tableName);
+        $select = $format->menu();
+        $array = Array();
+        $array['menu'] = $select;
+        return view('menu.compositions', $array);
     }
 
-    public function Flyers300GreenLineSelect()
+    public function delay()
     {
         $format = new Format();
-        $tableName = $format->getFlyers300greenlineFormat();
-        return response($tableName);
+        $select = $format->menu();
+        $array = Array();
+        $array['menu'] = $select;
+        return view('menu.delay', $array);
     }
 
-    public function Flyers350BrilanteFormatSelect()
+    public function utiles()
     {
         $format = new Format();
-        $tableName = $format->getFlyers350BrilantFormats();
-        return response($tableName);
+        $select = $format->menu();
+        $array = Array();
+        $array['menu'] = $select;
+        return view('menu.utiles', $array);
     }
 
-    public function Flyers350PlaticFormatSelect()
+    public function contacts()
     {
         $format = new Format();
-        $tableName = $format->getFlyers350PlasticFormats();
-        return response($tableName);
+        $select = $format->menu();
+        $array = Array();
+        $array['menu'] = $select;
+        return view('menu.contacts', $array);
     }
 
-    public function Affiches135FormatSelect()
+    public function payement()
     {
         $format = new Format();
-        $tableName = $format->getAffiches135Format();
-        return response($tableName);
-    }
- public function Affiches1FormatSelect()
-    {
-        $format = new Format();
-        $tableName = $format->getAffiches1Format();
-        return response($tableName);
+        $select = $format->menu();
+        $array = Array();
+        $array['menu'] = $select;
+        return view('menu.payement', $array);
     }
 
-    public function AffichesGrandFormatSelect()
+    public function livraison()
     {
         $format = new Format();
-        $tableName = $format->affiches_grand_format();
-        return response($tableName);
+        $select = $format->menu();
+        $array = Array();
+        $array['menu'] = $select;
+        return view('menu.livraison', $array);
     }
 
-    public function AffichesDigitaleFormatSelect()
+    public function techniques()
     {
         $format = new Format();
-        $tableName = $format->affiches_digitale_format();
-        return response($tableName);
+        $select = $format->menu();
+        $array = Array();
+        $array['menu'] = $select;
+        return view('menu.techniques', $array);
     }
 
-    public function AffichesGreenFormatSelect()
+    public function faq()
     {
         $format = new Format();
-        $tableName = $format->AffichesGreenFormat();
-        return response($tableName);
+        $select = $format->menu();
+        $array = Array();
+        $array['menu'] = $select;
+        return view('menu.faq', $array);
     }
-
-    public function affichesRectoFormatSelect()
-    {
-        $format = new Format();
-        $tableName = $format->AffichesRectoFormat();
-        return response($tableName);
-    }
-
-    public function Dépliants135FormatSelect()
-    {
-        $format = new Format();
-        $tableName = $format->Dépliants135Format();
-        return response($tableName);
-    }
-
-    public function carteVisiteBrillanteFormatSelect()
-    {
-        $format = new Format();
-        $tableName = $format->carteVisiteBrillanteFormat();
-        return response($tableName);
-    }
-
-    public function carteVisiteMatteFormatSelect()
-    {
-        $format = new Format();
-        $tableName = $format->carteVisiteMatteFormat();
-        return response($tableName);
-    }
-
-    public function carteVisiteGreenFormatSelect()
-    {
-        $format = new Format();
-        $tableName = $format->CarteVisiteGreenFormat();
-        return response($tableName);
-    }
-
-    public function carte300FormatSelect()
-    {
-        $format = new Format();
-        $tableName = $format->carte300Format();
-        return response($tableName);
-    }
-
-    public function carteDeluxeFormatSelect()
-    {
-        $format = new Format();
-        $tableName = $format->carteDeluxeFormat();
-        return response($tableName);
-    }
-
 
 }

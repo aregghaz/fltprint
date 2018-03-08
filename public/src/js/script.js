@@ -1,396 +1,309 @@
-$('.catalog').on('click', function (event) {
-    var menu = event.target.parentNode.childNodes[3];
-    if (menu) {
-        var menuDisplay = event.target.parentNode.childNodes[3].style.display;
-        if (menuDisplay == "none") {
-            menu.setAttribute("style", "display: block")
-        }
-        else {
-            menu.setAttribute("style", "display: none")
-        }
+$(document.body).click(function (event) {
+    var asdd = $(event.target).attr('id');
+    var asd = $("." + asdd);
+    if (asd.is(":hidden")) {
+        asd.slideDown("slow");
+    } else {
+        asd.hide();
     }
 });
-$('.selectArticle').change(function (event) {
-    var selectArticle = event.target.value;
+$('.product').on('click', function (event) {
+    var header = $(event.target).text();
+
+
+var tableName = $(event.target).attr("title");
+    window.location.href =  'table?tableName=' + tableName+'&header='+header ;
+
+});
+var selectArticle = $('.selectArticle');
+selectArticle.change(function (event) {
     var selectFormat = event.target.parentNode.childNodes[3];
     var list = event.target.parentNode.childNodes[3].childNodes;
+    var selectedOption = $('option:selected', event.target).attr("title");
     $(list).not($(list)[1]).not($(list)[3]).not($(list)[2]).not($(list)[0]).remove();
-    if (selectArticle == 1) {
-        $.ajax({
-            method: 'post',
-            url: urlForFormat,
-            data: {_token: token}
-        }).done(function (data) {
-            for (var i = 0; i < data.length; i++) {
-                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
-            }
-
-        });
-    }
-    else if (selectArticle == 2) {
-        $.ajax({
-            method: 'post',
-            url: urlForFormat170,
-            data: {_token: token}
-        }).done(function (data) {
-            for (var i = 0; i < data.length; i++) {
-                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
-            }
-        });
-    }
-    else if (selectArticle == 3) {
-        $.ajax({
-            method: 'post',
-            url: urlForFormat250,
-            data: {_token: token}
-        }).done(function (data) {
-            for (var i = 0; i < data.length; i++) {
-                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
-            }
-        });
-    }
-    else if (selectArticle == 4) {
-        $.ajax({
-            method: 'post',
-            url: urlForFormat300,
-            data: {_token: token}
-        }).done(function (data) {
-            for (var i = 0; i < data.length; i++) {
-                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
-            }
-        });
-    }
-    else if (selectArticle == 5) {
-        $.ajax({
-            method: 'post',
-            url: urlForFormat300Plastic,
-            data: {_token: token}
-        }).done(function (data) {
-            for (var i = 0; i < data.length; i++) {
-                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
-            }
-        });
-    }
-    else if (selectArticle == 6) {
-        $.ajax({
-            method: 'post',
-            url: urlFlyers350Select,
-            data: {_token: token}
-        }).done(function (data) {
-            for (var i = 0; i < data.length; i++) {
-                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
-            }
-        });
-    }
-    else if (selectArticle == 7) {
-        $.ajax({
-            method: 'post',
-            url: urlFlyers350Select,
-            data: {_token: token}
-        }).done(function (data) {
-            for (var i = 0; i < data.length; i++) {
-                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
-            }
-        });
-    }
-    else if (selectArticle == 8) {
-        $.ajax({
-            method: 'post',
-            url: urlFlyers350Brilante,
-            data: {_token: token}
-        }).done(function (data) {
-            for (var i = 0; i < data.length; i++) {
-                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
-            }
-        });
-    }
-    else if (selectArticle == 9) {
-        $.ajax({
-            method: 'post',
-            url: urlFlyers350Platic,
-            data: {_token: token}
-        }).done(function (data) {
-            for (var i = 0; i < data.length; i++) {
-                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
-            }
-        });
-    }
-    else if (selectArticle == 10) {
-        $.ajax({
-            method: 'post',
-            url: urlAffiches135FormatSelect,
-            data: {_token: token}
-        }).done(function (data) {
-            for (var i = 0; i < data.length; i++) {
-                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
-            }
-        });
-    }
-    else if (selectArticle == 11) {
-        $.ajax({
-            method: 'post',
-            url: urlAffiches1FormatSelect,
-            data: {_token: token}
-        }).done(function (data) {
-            for (var i = 0; i < data.length; i++) {
-                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
-            }
-        });
-    }
-    else if (selectArticle == 12) {
-        $.ajax({
-            method: 'post',
-            url: urlAffichesGrandFormatSelect,
-            data: {_token: token}
-        }).done(function (data) {
-            for (var i = 0; i < data.length; i++) {
-                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
-            }
-        })
-    }
-    else if (selectArticle == 13) {
-        $.ajax({
-            method: 'post',
-            url: urlAffichesDigitaleFormatSelect,
-            data: {_token: token}
-        }).done(function (data) {
-            for (var i = 0; i < data.length; i++) {
-                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
-            }
-        })
-    }
-    else if (selectArticle == 14) {
-        $.ajax({
-            method: 'post',
-            url: urlShopAffichesGreenFormatSelect,
-            data: {_token: token}
-        }).done(function (data) {
-            for (var i = 0; i < data.length; i++) {
-                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
-            }
-        })
-    }
-    else if (selectArticle == 15) {
-        $.ajax({
-            method: 'post',
-            url: urlAffichesRectoFormatSelect,
-            data: {_token: token}
-        }).done(function (data) {
-            for (var i = 0; i < data.length; i++) {
-                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
-            }
-        })
-    }
-    else if (selectArticle == 16) {
-        $.ajax({
-            method: 'post',
-            url: urlDepliants135FormatSelect,
-            data: {_token: token}
-        }).done(function (data) {
-            for (var i = 0; i < data.length; i++) {
-                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
-            }
-        })
-    }
-    else if (selectArticle == 17) {
-        $.ajax({
-            method: 'post',
-            url: urlCarteVisiteBrillante,
-            data: {_token: token}
-        }).done(function (data) {
-            for (var i = 0; i < data.length; i++) {
-                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
-            }
-        })
-    }
-    else if (selectArticle == 18) {
-        $.ajax({
-            method: 'post',
-            url: urlCarteVisiteMatte,
-            data: {_token: token}
-        }).done(function (data) {
-            for (var i = 0; i < data.length; i++) {
-                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
-            }
-        })
-    }
-    else if (selectArticle == 19) {
-        $.ajax({
-            method: 'post',
-            url: urlCarteVisiteGreenFormatSelect,
-            data: {_token: token}
-        }).done(function (data) {
-            for (var i = 0; i < data.length; i++) {
-                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
-            }
-        })
-    }
-    else if (selectArticle == 20) {
-        $.ajax({
-            method: 'post',
-            url: urlCarte300FormatSelect,
-            data: {_token: token}
-        }).done(function (data) {
-            for (var i = 0; i < data.length; i++) {
-                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
-            }
-        })
-    }
-    else if (selectArticle == 21) {
-        $.ajax({
-            method: 'post',
-            url: urlCarteDeluxeFormatSelect,
-            data: {_token: token}
-        }).done(function (data) {
-            for (var i = 0; i < data.length; i++) {
-                selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
-            }
-        })
-    }
-});
-var price = $('#priceCount');
-$('#verification').on('click', function () {
-    if ($('#verification').prop('checked')) {
-
-        var newPrice = Number(price.text()) + 4;
-        price.text(newPrice.toFixed(2));
-    } else {
-        price.text((Number(price.text()) - 4).toFixed(2));
-    }
-});
-$('#pliage').on('click', function () {
-    if ($('#pliage').prop('checked')) {
-        var newPrice = Number(price.text()) + 50;
-        price.text(newPrice.toFixed(2));
-    } else {
-        price.text((Number(price.text()) - 50).toFixed(2));
-    }
-});
-$('#perforation').on('click', function () {
-    if ($('#perforation').prop('checked')) {
-        var newPrice = Number(price.text()) + 50;
-        price.text(newPrice.toFixed(2));
-    } else {
-        price.text((Number(price.text()) - 50).toFixed(2));
-    }
-});
-$('#liassésA').on('click', function () {
-    if ($('#liassésA').prop('checked')) {
-        var newPrice = Number(price.text()) + 10;
-        price.text(newPrice.toFixed(2));
-    } else {
-        price.text((Number(price.text()) - 10).toFixed(2));
-    }
-});
-$('#LiassésB').on('click', function () {
-    if ($('#LiassésB').prop('checked')) {
-        var newPrice = Number(price.text()) + 10;
-        price.text(newPrice.toFixed(2));
-    } else {
-        price.text((Number(price.text()) - 10).toFixed(2));
-    }
-});
-$('.count1').on('click', function (event) {
-    event.preventDefault();
-    var selectValue = $('#selectValue').val();
-    var rootName = $('#rootName').val();
-    var countProduct = parseFloat(event.target.parentNode.childNodes[1].innerText);
-    var productId = event.target.childNodes[1].value;
-    var priceProduct = event.target.innerText;
-    window.location.href = rootName + '?countProduct=' + countProduct + '&productId=' + productId + '&selectValue=' + selectValue + '&priceProduct=' + priceProduct;
-});
-var selectedPrice = 0;
-
-
-    $('.format').change(function (event) {
-        var productPrices;
-        var currentPrices;
-        var selectedCount;
-        var productCount;
-        var currentCount;
-        var count = event.target.parentNode.parentNode.parentNode.childNodes[5].childNodes[3];
-        var price = event.target.parentNode.parentNode.parentNode.childNodes[5].childNodes[7].childNodes[1];
-        if (productPrices) {
-            productPrices.remove();
+    $.ajax({
+        method: 'post',
+        url: urlForFormat,
+        data: {selectedOption: selectedOption,_token: token}
+    }).done(function (data) {
+        for (var i = 0; i < data.length; i++) {
+            selectFormat.innerHTML += ' <option class="selectOption" value="' + data[i].value + '">' + data[i].name + ' (' + data[i].size + ')' + "</option>"
         }
-        if (productCount) {
-            productCount.remove();
+    });
+});
+var totalCount;
+function discount() {
+    var discount5 = $('#discounted5');
+    var discount25 = $('#discounted25');
+    if(discount5.prop('checked')== true && discount25.prop('checked') == false){
+        totalCount = totalCount - ((5 * totalCount) / 100)
+    }
+    else if(discount25.prop('checked')){
+        totalCount = totalCount - ((25 * totalCount) / 100);
+    }
+}
+
+function changeCount() {
+    var price = $('.price');
+    var name = $('.selectArticle option:selected');
+    var format = $('.format option:selected');
+    var data = [];
+    var nameProduct = [];
+    var size = [];
+    totalCount = 0;
+    for (var i = 0; i < price.length; i++) {
+        if (price[i].value !== '0' && name[i].value !== null) {
+            data[i] = price[i].value;
+            nameProduct[i] = name[i].text;
+            size[i] = format[i].text;
+            totalCount += parseInt(data[i]);
         }
-        var selectedOption = $('option:selected', event.target.parentNode.childNodes[1]).attr("title");
-        var formatValue = $(event.target).val();
-        var selectedProduct = $('.selected_product_inputs');
-        var selectedFormat = $('.selected_format_inputs');
-        $.ajax({
-            method: 'post',
-            url: urlSelect,
-            data: {tableName: selectedOption, formatValue: formatValue, _token: token}
-        }).done(function (data) {
-            var productName = $.map(data.productName[0], function (value) {
-                return [value];
-            });
-            var productCount = $.map(data.productCount[0], function (value) {
-                return [value];
-            });
+    }
 
-            for (var i = 2; i < productName.length; i++) {
-                selectedProduct.append('<input class="productPrice ' + selectedOption + 1 + '" type="text" value="' + productName[i] + '">');
-                selectedFormat.append('<input class="productCount ' + selectedOption + 2 + '" type="text" value="' + productCount[i] + '">');
-            }
-            $(price).val($('.productPrice')[0].value);
-            $(count).val(parseInt($('.productCount')[0].value))
-        });
-        $('.plus').on('click', function (event) {
-            var tableName1 = $('option:selected', event.target.parentNode.parentNode.parentNode.childNodes[1].childNodes[1].childNodes[1]).attr("title") + 1;
-            var tableName2 = $('option:selected', event.target.parentNode.parentNode.parentNode.childNodes[1].childNodes[1].childNodes[1]).attr("title") + 2;
+    discount();
+    $('#total').text(totalCount);
+    var totalPrice = (21 * totalCount) / 100 + totalCount;
+    $('#nds').text(totalPrice)
+}
+changeCount();
+var price = $('.price');
 
-            currentCount = event.target.parentNode.parentNode.parentNode.childNodes[5].childNodes[3];
-            productPrices = $('.' + tableName1);
-            console.log(tableName1);
-            productCount = $('.' + tableName2);
-            currentPrices = event.target.parentNode.parentNode.parentNode.childNodes[5].childNodes[7].childNodes[1];
-            for (var i = 0; i < productPrices.length; i++) {
-                if (productPrices[i].value == currentPrices.value) {
-                    selectedPrice = i;
-                    selectedCount = i;
-                }
+$("#delayBox").on('click', function () {
+    if ($("#24").is(":checked")) {
+        for (var a = 0; a < price.length; a++) {
+            if ($(price[a]).val() == 0) {
             }
-            event.preventDefault();
-            selectedPrice += 1;
-            selectedCount += 1;
-            var newPrice = Number(currentPrices.value);
-            var newCount = Number(currentCount.value);
-            if (selectedPrice >= productPrices.length - 1) {
-                newPrice += Number(productPrices[productPrices.length - 1].value);
-                newCount += parseInt(productCount[productCount.length - 1].value);
-                $(currentPrices).val(newPrice);
-                $(currentCount).val(newCount);
+            else  {
+                $(price[a]).val(Number(price.val() +26))
+            }
+        }
+        changeCount();
+    }
+    else if ($("#48").is(":checked")) {
+        for (var i = 0; i < price.length; i++) {
+            if ($(price[i]).val() == 0) {
+            }
+            else if($(price[i]).val() !== 0) {
+                $(price[i]).val(price[i].value - 6)
             }
             else {
-                $(currentPrices).val(productPrices[selectedPrice].value);
-                $(currentCount).val(parseInt(productCount[selectedCount].value));
+                $(price[i]).val(price[i].value + 6)
             }
+        }
+        changeCount();
+    }
+    else if ($("#72").is(":checked")) {
+        for (var j = 0; j < price.length; j++) {
+            if ($(price[j]).val() == 0) {
+            }
+            else {
+                $(price[j]).val(price[j].value - 8)
+            }
+        }
+        changeCount();
+    }
+    else if ($("#96").is(":checked")) {
+        for (var q = 0; q < price.length; q++) {
+            if ($(price[q]).val() == 0) {
+            }
+            else {
+                $(price[q]).val(price[q].value - 12)
+            }
+        }
+        changeCount();
+    }
+});
+
+
+$('.verification').on('click', function (event) {
+    var price = $(event.target.parentNode.parentNode.childNodes[5].childNodes[7].childNodes[1]);
+    if ($(event.target.parentNode.parentNode.childNodes[3].childNodes[3]).prop('checked')) {
+        var newPrice = Number(price.val()) + 4;
+        price.val(newPrice);
+    } else {
+        price.val(price.val() - 4);
+    }
+    changeCount();
+});
+$('.pliage').on('click', function (event) {
+    var price = $(event.target.parentNode.parentNode.childNodes[5].childNodes[7].childNodes[1]);
+    if ($(event.target.parentNode.parentNode.childNodes[3].childNodes[8]).prop('checked')) {
+        var newPrice = Number(price.val()) + 50;
+        price.val(newPrice);
+    } else {
+        price.val(price.val() - 50)
+    }
+    changeCount();
+});
+$('.perforation').on('click', function (event) {
+    var price = $(event.target.parentNode.parentNode.childNodes[5].childNodes[7].childNodes[1]);
+    if ($(event.target.parentNode.parentNode.childNodes[3].childNodes[13]).prop('checked')) {
+        var newPrice = Number(price.val()) + 50;
+        price.val(newPrice);
+    } else {
+        price.val(price.val() - 50);
+    }
+    changeCount();
+});
+$('.liassésA').on('click', function (event) {
+    var price = $(event.target.parentNode.parentNode.childNodes[5].childNodes[7].childNodes[1]);
+    if ($(event.target.parentNode.parentNode.childNodes[3].childNodes[18]).prop('checked')) {
+        var newPrice = Number(price.val()) + 10;
+        price.val(newPrice);
+    } else {
+        price.val(price.val() - 10);
+    }
+    changeCount();
+});
+$('.LiassésB').on('click', function (event) {
+    var price = $(event.target.parentNode.parentNode.childNodes[5].childNodes[7].childNodes[1]);
+    if ($(event.target.parentNode.parentNode.childNodes[3].childNodes[23]).prop('checked')) {
+        var newPrice = Number(price.val()) + 10;
+        price.val(newPrice);
+    } else {
+        price.val(price.val() - 10);
+    }
+    changeCount();
+});
+
+$('.secondSelect').change(function (event) {
+    event.preventDefault();
+    var select = $('#hiddenSelect');
+    var divClone = select.clone(true, true);
+    select.attr("style", "display: inline-block");
+    $('.select').append(divClone);
+    var option = event.target.parentNode.parentNode.parentNode.childNodes[3];
+    if (option.style.display == 'none') {
+        option.setAttribute("style", "display: block")
+    }
+});
+
+$('.format').change(function (event) {
+    var selectedPrice = 0;
+    var selectedCount = 0;
+    var productPrices;
+    var currentPrices;
+    var productCount;
+    var currentCount;
+    var count = event.target.parentNode.parentNode.parentNode.childNodes[5].childNodes[3];
+    var price = event.target.parentNode.parentNode.parentNode.childNodes[5].childNodes[7].childNodes[1];
+    var selectedOption = $('option:selected', event.target.parentNode.childNodes[1]).attr("title");
+    var formatValue = $(event.target).val();
+    var selectedProduct = $(event.target.parentNode.childNodes[5]);
+    var selectedFormat = $(event.target.parentNode.childNodes[7]);
+    selectedProduct.children().remove();
+    selectedFormat.children().remove();
+    $.ajax({
+        method: 'post',
+        url: urlSelect,
+        data: {tableName: selectedOption, formatValue: formatValue, _token: token}
+    }).done(function (data) {
+        var productName = $.map(data.productName[0], function (value) {
+            return [value];
         });
-        $('.minus').on('click', function (event) {
-            event.preventDefault();
-            selectedPrice -= 1;
-            selectedCount -= 1;
-            var newPrice = Number(currentPrices.value);
-            var newCount = Number(currentCount.value);
-            if (selectedPrice >= productPrices.length - 1) {
-                newPrice -= Number(productPrices[productPrices.length - 1].value);
-                newCount -= parseInt(productCount[productCount.length - 1].value);
-                $(currentPrices).val(newPrice);
-                $(currentCount).val(newCount);
-            }
-            else if (selectedPrice < productPrices.length - 1 && selectedPrice > 0) {
-                $(currentPrices).val(productPrices[selectedPrice].value);
-                $(currentCount).val(parseInt(productCount[selectedCount].value));
-            }
-            else if (selectedPrice == 0) {
-                $(currentPrices).val(productPrices[0].value);
-                $(currentCount).val(parseInt(productCount[0].value));
-            }
+        var productCount = $.map(data.productCount[0], function (value) {
+            return [value];
         });
+        for (var i = 2; i < productName.length; i++) {
+            selectedProduct.append('<input  type="text" value="' + productName[i] + '">');
+            selectedFormat.append('<input  type="text" value="' + productCount[i] + '">');
+
+        }
+        $(price).val(event.target.parentNode.childNodes[5].childNodes[0].value);
+        $(count).val(parseInt(event.target.parentNode.childNodes[7].childNodes[0].value));
     });
+    changeCount();
+    $(event.target.parentNode.parentNode.parentNode.childNodes[5].childNodes[1].childNodes[1]).on('click', function (event) {
+        event.preventDefault();
+        currentCount = event.target.parentNode.parentNode.parentNode.childNodes[5].childNodes[3];
+        productPrices = event.target.parentNode.parentNode.parentNode.childNodes[1].childNodes[1].childNodes[5].childNodes;
+        productCount = event.target.parentNode.parentNode.parentNode.childNodes[1].childNodes[1].childNodes[7].childNodes;
+        currentPrices = event.target.parentNode.parentNode.parentNode.childNodes[5].childNodes[7].childNodes[1];
+        selectedPrice += 1;
+        selectedCount += 1;
+        var newPrice = Number(currentPrices.value);
+        var newCount = Number(currentCount.value);
+        if (selectedPrice >= productPrices.length - 1) {
+            newPrice += parseInt(productPrices[productPrices.length - 1].value);
+            newCount += parseInt(productCount[productCount.length - 1].value);
+            $(currentPrices).val(newPrice);
+            $(currentCount).val(newCount);
+        }
+        else if (selectedPrice < productPrices.length - 1) {
+            $(currentPrices).val(productPrices[selectedPrice].value);
+            $(currentCount).val(parseInt(productCount[selectedCount].value));
+        }
+        changeCount();
+    });
+    $(event.target.parentNode.parentNode.parentNode.childNodes[5].childNodes[5].childNodes).on('click', function (event) {
+        currentCount = event.target.parentNode.parentNode.parentNode.childNodes[5].childNodes[3];
+        productPrices = event.target.parentNode.parentNode.parentNode.childNodes[1].childNodes[1].childNodes[5].childNodes;
+        productCount = event.target.parentNode.parentNode.parentNode.childNodes[1].childNodes[1].childNodes[7].childNodes;
+        currentPrices = event.target.parentNode.parentNode.parentNode.childNodes[5].childNodes[7].childNodes[1];
+        event.preventDefault();
+        if (selectedPrice <= 0) {
+            selectedPrice = 0;
+        } else {
+            selectedPrice -= 1;
+        }
+        if (selectedCount <= 0) {
+            selectedCount = 0;
+        } else {
+            selectedCount -= 1;
+        }
+        var newPrice = parseInt(currentPrices.value);
+        var newCount = parseInt(currentCount.value);
+        if (selectedPrice >= productPrices.length - 1) {
+            newPrice -= Number(productPrices[productPrices.length - 1].value);
+            newCount -= parseInt(productCount[productCount.length - 1].value);
+            $(currentPrices).val(newPrice);
+            $(currentCount).val(newCount);
+        }
+        else if (selectedPrice < productPrices.length - 1 && selectedPrice > 0) {
+            $(currentPrices).val(productPrices[selectedPrice].value);
+            $(currentCount).val(parseInt(productCount[selectedCount].value));
+        }
+        else if (selectedPrice == 0) {
+            $(currentPrices).val(productPrices[0].value);
+            $(currentCount).val(parseInt(productCount[0].value));
+        }
+        changeCount();
+    });
+});
 
+$('#divace').on('click', function () {
+    event.preventDefault();
+    debugger;
+    var price = $('.price');
+    var count = $('.count_input');
+    var name = $('.selectArticle option:selected');
+    var format = $('.format option:selected');
+    var data = [];
+    var nameProduct = [];
+    var size = [];
+    var countProduct = [];
+    var discount5 = $('#discounted5');
+    var discount25 = $('#discounted25');
+    var totalCount = 0;
+    for (var i = 0; i < price.length; i++) {
+        if (price[i].value !== '0' && name[i].value !== null) {
+            data[i] = price[i].value;
+            countProduct[i] = count[i].value;
+            if(discount5.prop('checked')== true && discount25.prop('checked') == false){
+                data[i] = data[i] - ((5 * data[i]) / 100)
+            }
+            else if(discount25.prop('checked')){
+                data[i] = data[i] - ((25 * data[i]) / 100);
+            }
+            nameProduct[i] = name[i].text;
+            size[i] = format[i].text;
 
+            totalCount += parseInt(data[i]);
+
+        }
+    }
+
+    var totalPrice = (21 * totalCount) / 100 + totalCount;
+    window.location.href = download + '&data=' + data + '&nameProduct=' + nameProduct + '&format=' + size + '&totalCount=' + totalCount + '&totalPrice=' + totalPrice+'&countProduct=' + countProduct;
+
+});

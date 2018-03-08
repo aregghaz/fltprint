@@ -1,7 +1,4 @@
-<!-- style="display: none" -->
-
-<div  class="selected_product_inputs" >
-    @if(!empty($productPrice))
+ @if(!empty($productPrice))
         @foreach($productPrice as $value)
             @if(!empty($value->count_1))
                 <input class="productPrice" title="" type="text" value="{{ $value->count_1 }}">
@@ -71,9 +68,6 @@
             @endif
         @endforeach
     @endif
-    </div>
-
-    <div class="selected_format_inputs" >
     @if(!empty($productCount))
         @foreach($productCount as $value)
             @if(!empty($value->count_1))
@@ -144,4 +138,3 @@
             @endif
         @endforeach
     @endif
-</div>
